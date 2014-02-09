@@ -1,0 +1,83 @@
+WORKING VERSION:
+(define (xmemb x list)
+(cond
+( (null? list) #f )
+( (eq? x (car list)) #t ) 
+( #t (xmemb x (cdr list) ) ) 
+) )
+
+(define (xremove x list)
+(cond
+( (null? list) #f )
+( (eq? x (car list)) (cdr list))
+(#t (xremove x (cdr list) ) )
+))
+
+(define (xunique list1 list2)
+ (cond
+  ((NULL? list1) '())
+  ((xmemb (car list1) list2)
+			(xremove (car list1) list1) )
+	(else (cons (car list1) (xunique(cdr list1) list2)) )
+))
+==========================================
+(define (append L1 L2)
+(cond
+((null? L1) L2)
+(else (cons (car L1) (append (cdr L1) L2)))
+))
+
+(define (rev L)
+(cond
+((null? L) L)
+(#t (append (rev (cdr L))
+(cons (car L) '()))) 
+))
+
+(define (xgreater x y)
+ (cond
+ ( (> x y) #t )
+ (else (< x y) #f )
+ ) )
+
+ (define (xsort list)
+  (cond
+  ( (null? list) #f)
+  ( (xgreater (car(cdr list)) (car list) ) (rev list) ) 
+  ( (xgreater (car list) (car(cdr list)) ) (rev list) ) 
+  (else(cons (car list) (xsort(cdr list) ) ) )
+) )
+==========================================
+(define (append x y)
+(cond
+((null? x) y)
+(else (cons x y))
+))
+
+(define (xgreater x y)
+ (cond
+ ( (> x y) #t )
+ (else (< x y) #f )
+ ) )
+
+ (define (xsort list)
+  (cond
+  ( (null? list) '())
+  ( (xgreater (car(cdr list)) (car list) ) (append (car list) (xsort(cdr list)) ) ) 
+  (else(cons (car list) (xsort(cdr list) ) ) )
+) )
+==========================================
+
+ (define (xswap x list1)
+ (cond
+  ((null? list1) x )
+  ( (>= x (car(list1))) (cons (list1) x) )
+  (else (cons (car (list1)) (xswap x (cdr(list1))) ) )
+ ))
+
+(define (xsort list)
+  (cond
+  ( (null? list) (list ) )
+  ( (xswap (car list) (xsort (cdr list)) ) )
+  (else (xsort (cdr list) ) ) 
+) )

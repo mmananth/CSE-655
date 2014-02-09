@@ -1,0 +1,18 @@
+/*************************************************
+*For the Declaration sequence in the core grammer*
+*<decl seq> ::= <decl> | <decl> <decl seq>       *
+*************************************************/
+#ifndef DECLSEQ_H
+#define DECLSEQ_H
+
+#include <iostream>
+
+using namespace std;
+
+void execDS(char* DS)
+{
+  cout<<"execDS"<<endl; 
+  cout<<DS<<endl;
+}
+
+#endif //DECLSEQ_H

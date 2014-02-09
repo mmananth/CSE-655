@@ -1,0 +1,4 @@
+program
+ int X;
+ begin X = 25 ; write X ; 
+ (if X || 0) end

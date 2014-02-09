@@ -1,0 +1,17 @@
+#include<iostream>
+#include<ifstream>
+#include "Tokenizer.cpp"
+
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+  Tokenizer t(argv[1]);
+  int tok=t.getToken();
+  while(tok!=33)
+  {
+    tok=t.getToken();
+    t.skipToken();
+    cout<<tok<<endl;
+  }
+}

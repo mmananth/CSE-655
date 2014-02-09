@@ -1,0 +1,60 @@
+#include<iostream>
+#include<ifstream>
+#include "Tokenizer.cpp"
+
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+  istr.open(argv[1],ifstream::in);
+  if(!istr.is_open())
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  ostr.open("output1.txt");
+  if(!ostr.is_open())
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  while(getline(istr,line))
+  {
+    
+    lines[count++]=line;
+  }
+
+  //closing the object for the input file
+  istr.close();
+
+/************************************************************************************
+*Use the string tokenizer function to get the tokens with space and tab as delimiters
+************************************************************************************/
+  cstr=new char[1000];
+  for(int i=0;i<count;i++)
+  {
+    strcpy(cstr,lines[i].c_str());
+    pt=strtok(cstr," \t");
+    while(pt!=NULL)
+    {
+      ostr<<pt<<endl;
+      pt=strtok(NULL," \t");
+    }
+  }
+
+  count = 0;
+  while(getline(istr2,line)) lines[count++]=line;
+
+  Tokenizer t;
+
+  for(int i=0;i<count;i++)
+  {
+    int tok=t.getToken(lines[i]);
+    while(tok!=33)
+    {
+      t.skipToken(lines[i]);
+      tok=t.getToken(lines[i]);
+      cout<<tok<<endl;
+    }
+  }
+}

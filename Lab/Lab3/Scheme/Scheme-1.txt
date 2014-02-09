@@ -1,0 +1,324 @@
+(define (xmemb x list)
+(cond
+((null? list) #f)
+((eq? x(car list)) #t)
+(#t (xmemb x(cdr list) ))))
+
+(xmemb 3 (quote (2 3 4)))
+(xmemb 6 (quote (1 2 3)))
+===================================
+(define(equal x y)
+ (cond ((pair? x) 
+    (cond(pair? y)
+      (eq? (car (x), car(y)) (equal(cdr(x), cdr(y)))
+       ( #t #f))
+     (#t #f))
+    ((pair? y) #f)
+   (#t (eq? (x y)))
+  (#t #f))))
+  
+DOES NOT WORK
+===================================
+(define(xunion x y)
+ (cond
+  ((null? x) y)
+  ((null? y) x)
+   ((xmemb(car(s1),s2)) (xunion(cdr(s1),s2)))
+    (#t(cons(car(s1), xunion(cdr(s1),s2))))
+   ))
+   
+(xunion 3 4)
+(xunion () 4)
+(xunion 4)
+
+DOES NOT WORK
+===================================
+(define (addUpList L)
+ (cond
+  ((null? L) 0)
+   (#t (+ (car L) (addUpList (cdr L) ) ) ) ) )
+   
+   
+(addUpList ( quote(2 3 4) ) )
+===================================
+(define (nNIL n)
+ (cond 
+  ( ( = n 0 ) (quote () ) )
+   (#t (cons '() (nNIL(- n 1 ) ) ) ) ) )
+   
+(nNIL 4)
+===================================
+(define (dUP s)
+  (cons s s) )
+  
+(dUP 4)
+===================================
+(define (first list ) 
+(cond
+ ( (pair? (quote (list () ) ) ) (CAR list ) )
+  (#t (first (CAR list) ) ) ) )
+  
+(define (first list)
+ (cond
+  ((null? list) #f )
+  ( (eq? 2(length list )) (CAR list) )
+   (#t (first (CAR list) ) ) ) )
+   
+(define (first list)
+ (cond
+  ((null? list) #f )
+   (#t (CAR list) ) ) )
+
+(first (quote (1 2 3) ) )
+(first (quote (1 2 3 4 5 6) ) )
+(first (quote (1) ) )
+===================================
+(define (last list)
+ (cond
+  ( (pair? (quote (list () ) ) ) (CDR list ) ) 
+   (#t (last list ) ) ) ) 
+   
+(define (last list)
+ (cond
+  ( (null? (list) ) (CDR list ) )  
+   (#t (last (CDR list) ) ) ) ) 
+
+(define (last list)
+ (cond
+  ((null? list) #f )
+  ( (eq? 1(length list )) (list) )
+  ( (eq? 2(length list )) (CDR list) )
+   (#t (last (CDR list) ) ) ) )
+
+(last ( quote (1 2 3 4 5 6 7) ) )
+(last (quote (1) ) )
+===================================
+
+(define (join list1 list2)
+ (cond
+  ((null? list1) list2)
+  ((null? list2) list1)
+   (#t (- (length list1) 1) (list2) ) ) ) 
+   
+   
+(join quote (1) (2) )
+==================================
+APPEND:
+(define (append L1 L2)
+(cond
+((null? L1) L2)
+(else (cons (car L1) (append (cdr L1) L2)))
+))
+
+(append (quote(1 2 3)) (quote(4 5 6)) )
+==================================   
+/*******************************************************************/
+Function 1: check if element in L2 is present in L1 also
+(define (xmemb x list) ;FINAL
+(cond
+( (null? list) #f )
+( (eq? x (car list)) #t ) 
+( #t (xmemb x (cdr list) ) ) ) )  
+
+Alternate:
+(define (xmemb list x) 
+(cond
+( (null? list) #f )
+( (eq? (car list) x ) #t ) 
+( #t (xmemb (cdr list) x ) ) ) ) 
+
+(xmemb 3 (quote (2 3 4)))
+(xmemb 6 (quote (1 2 3)))
+
+(xmemb (quote (2 3 4)) 3)
+(xmemb (quote (1 2 3)) 6)
+==================================   
+returns unique elements in a list
+(define (xunique list1 list2)
+ (cond
+  ((NULL? list1) '())
+  ((xmemb (car list1) list2)
+			(cons(car list1) (xunique(cdr list1) list2)))
+	(else(xunique(cdr list1) list2))
+))
+
+(xunique (quote(1 2 3)) (quote(3 4 5)) )
+(xunique (quote(3 2 1)) (quote(3 4 5)) )
+
+Alternate:
+(define (xunique list1 list2) ;FINAL
+ (cond
+  ((NULL? list1) '())
+  ((xmemb (car list1) list2)
+			(xremove (car list1) list1) )
+	(else (cons (car list1) (xunique(cdr list1) list2)) )
+))
+
+================================== 
+Function 2: To remove an element from a list
+(define (xremove x list) ;FINAL
+(cond
+( (null? list) #f )
+( (eq? x (car list)) (cdr list))
+(#t (xremove x (cdr list) ) )
+))
+
+(xremove 3 (quote (3 4 5)))
+(xremove 5 (quote (3 4 5)))
+
+(define (xremove x list)
+(cond
+( (null? list) #f )
+( (eq? x (car list)) (cdr list))
+(else (eq? x(cdr list)) (car list))
+(#t (xremove x (cdr list) ) )
+))
+
+(define (xremove x list)
+(cond
+( (null? list) #f )
+( (eq? x (car list)) (cdr list))
+(else (cons (car list) (car(cdr(list) ) ) ) )  
+) )
+
+
+==================================
+--Does not work when element is not present in the list   
+--Check if an element is present in the list
+(define (xequal x list)
+(cond
+( (eq? x (car list)) #t)
+(else (eq? x(cdr list)) (xequal x(cdr list) ) )
+(else (xequal x(cdr list) ) )
+))
+
+(xequal 3 (quote(1 2 3)))
+(xequal 3 (quote(3 2 1)))
+(xequal 7 (quote(1 2 3 4 5 6 6 7)))
+(xequal 8 (quote(1 2 3 4 5 6 6 7)))
+==================================
+
+(define (xgreater x y)
+ (cond
+ ( (> x y) ( cons y x) )
+ (else (< x y) (cons x y) )
+ ) )
+ 
+(xgreater (quote(2)) (quote(3) ) ) 
+(xgreater 2 3)
+(xgreater 2 9)
+(xgreater 8 3)
+
+(define (xgreater x y)
+ (cond
+ ( (> x y) #t )
+ (else (< x y) #f )
+ ) )
+ 
+ =================================
+attempt 1:
+ (define (xsort list)
+  (cond
+  ( (null? list) #f)
+  ( (xgreater (car list) (car(cdr list)) ) (cons (car(cdr list)) (car list) ) )
+  (else (cons (car list) (xsort(cdr list) ) ) )
+) )
+
+attempt 2:
+ (define (xsort list)
+  (cond
+  ( (null? list) #f)
+  ( (xgreater (car list) (car(cdr list)) ) (cons (car(cdr list)) (xsort(list)) ) )
+  (else (cons (car list) (xsort(cdr list) ) ) )
+) )
+
+(xsort (quote(3 6 4)))
+(xsort (quote(6 4 2)))
+(xsort (quote(6 8 9 5 4 2)))
+
+attempt 3:
+ (define (xsort list)
+  (cond
+  ( (null? list) #f)
+  ( (xgreater (car(cdr list)) (car list) ) (rev list) ) 
+  ( (xgreater (car list) (car(cdr list)) ) (rev list) ) 
+  (else(cons (car list) (xsort(cdr list) ) ) )
+) )
+
+======================================
+
+(define (append L1 L2)
+(cond
+((null? L1) L2)
+(else (cons (car L1)
+(append (cdr L1) L2)))
+))
+
+(append (quote(1 2 3)) (quote(4 5 6)))
+
+====================================
+(define (rev L)
+(cond
+((null? L) L)
+(#t (append (rev (cdr L))
+(cons (car L) '()))) ))
+
+(rev(quote(1 2 3 4)))
+(rev(quote(6 8 9 5 4 2)))
+====================================
+(define (xswap x y)
+ (cond
+  ((null? x) y)
+  ( (> x y) (cons y x) )
+ (else (< x y) (cons x y) )
+ ))
+ 
+ (xswap 1 2)
+ (xswap 5 1)
+ 
+ (define (xswap x list1)
+ (cond
+  ((null? list1) x )
+  ( (eq? 1(length '(list1) )) (list1) )
+  ( (<= x (car (list1))) (cons x (list1) ) )
+  (else (cons (car (list1)) (xswap x (cdr(list1))) ) )
+ ))
+ 
+(define (xswap x y)
+ (cond
+  ((null? y) x )
+  ( (<= x y) (cons x y ) )
+  (else (cons y x) )
+ ))
+ 
+ (xswap 1 (quote(3 4 5)))
+ (xswap 1 (3 4 5))
+ 
+==================================== 
+(define (xsort list)
+  (cond
+  ( (null? list) #f) 
+  ( (xswap (car list) (car(cdr list)) ) (cons (car list) (xsort (cdr list)) ) ) 
+  (else(cons (car list) (xsort(cdr list) ) ) )
+) )
+
+(xsort (quote(3 6 4)))
+(xsort (quote(6 4 2)))
+(xsort (quote(6 8 9 5 4 2)))
+
+(define (xsort list)
+  (cond
+  ( (null? list) (car list) )
+  ( (xswap (car list) (xsort (cdr list)) ) ) 
+  (else(cons (car list) (xsort(cdr list) ) ) )
+) )
+
+(define (xsort list)
+  (cond
+  ( (null? list) '() )
+  ( (xswap (car list) (xsort (cdr list)) ) )
+  (else (xsort (cdr list) ) )
+) )
+
+/*******************************************************************/
+

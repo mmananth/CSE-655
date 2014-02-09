@@ -1,0 +1,38 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "execDECL.cpp"
+
+using namespace std;
+
+void parseSS()
+{
+  int count=0;
+  string lines[1000];
+  char *line;
+  ifstream istr("output4.txt");
+  if(!istr.is_open())
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+
+  while(getline(istr,line))
+    {
+      lines[count++]=line;
+    }
+
+  //closing the object for the input file
+  istr.close();
+
+  cout<<"execSS"<<endl;
+  cout<<SS<<endl;
+  if(!strcmp(SS,"10"))
+  {
+    cout<<"read"<<endl;
+    SS=lines[0];
+  }
+  cout<<"---"<<SS<<endl;
+  //cout<<InputFile[0].sParam<<endl;  
+  //execDECL();
+}

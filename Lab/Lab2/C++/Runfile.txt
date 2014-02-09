@@ -1,0 +1,33 @@
+/*----------------------------------------------------------------------*/
+/* Instructions to the Grader on compiling and executing the program	*/
+/*----------------------------------------------------------------------*/
+1) To Compile the program, run the below command at the command prompt:
+
+> make
+--------------
+sample output
+--------------
+g++ -c -g  TestInterpreter.cpp -o TestInterpreter.o
+g++ -c -g  Tokenizer.cpp -o Tokenizer.o
+g++ -c -g  Program.cpp -o Program.o
+g++ -c -g  Decl.cpp -o Decl.o
+g++ -c -g  DeclSeq.cpp -o DeclSeq.o
+
+2) To clean or remove the object files, run the below command:
+
+> make clean
+
+/*----------------------------------------------------------------------*/
+/* Method for running the program					*/
+/*----------------------------------------------------------------------*/
+./TestInterpreter <inputFile1> <inputFile2>
+
+where:
+<inputFile1> --> Contains the core program. This is used by the Tokenizer to create tokens out of the core program key words.
+
+<inputFile2> --> Contains the input which is used to assign to variables within the core program. Typically, the variables are preceded by the keyword "read". Calling "write" shows the output on the standard screen.
+
+/*----------------------------------------------------------------------*/
+/*Error handling
+/*----------------------------------------------------------------------*/
+	The program at its current form returns an error during its parsing phase. It throws an error when it finds that 2 variables are declared more then once. It displays an error message on the screen and exits out of the program.

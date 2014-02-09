@@ -1,0 +1,115 @@
+#include "Stmt.h"
+
+extern Tokenizer t;
+
+Stmt::~Stmt()
+{
+  delete pif;
+  delete loop;
+}
+
+void Stmt::parseStmt()
+{
+  curToken=t.getToken();     
+  cout<<"curToken in parseStmt "<<curToken<<endl;
+ 
+  if(curToken == 32)
+  {
+    altNum=1;
+    assign.parseAssign();
+  }
+
+  else if(curToken == 5)
+  {
+    altNum=2;
+    this->getIfInstanceStmt()->parseIF();
+    //if(pif.checkIf == pif.checkIfEnd) { cout<<"If and End match "<<endl; }
+    //else { cout<<"No matching end for If. Exiting... "<<endl; }
+  }
+
+  else if(curToken == 8)
+  {
+    altNum=3;
+    this->getLoopInstanceStmt()->parseLoop();
+    //if(loop.checkWhile == loop.checkWhileEnd) { cout<<"While and End match "<<endl; }
+    //else { cout<<"No matching end for While. Exiting... "<<endl; }
+  }
+
+  else if(curToken == 10)
+  {
+    altNum=4;
+    in.parseIN();
+  }
+
+  else if(curToken == 11)
+  {
+    cout<<"curToken-before calling OUT "<<curToken<<endl;
+    altNum=5;
+    out.parseOUT();
+  }
+  else 
+    cout<<"Error in Stmt.cpp. Exiting..."<<endl;
+}
+
+void Stmt::printStmt()
+{
+  //if(altNum==1) {
+  curToken=t.getToken();
+  cout<<"curToken "<<curToken<<endl;
+  if(curToken == 32){
+    assign.printAssign();
+    if(curToken==14) {cout<<" = "; t.skipToken();curToken=t.getToken(); }
+  }
+  else if(curToken==5) {
+    this->getIfInstanceStmt()->printIF();
+  }
+  else if(curToken==8) {
+    this->getLoopInstanceStmt()->printLoop();
+  }
+  else if(curToken==10) {
+    in.printIN();
+  }
+  else if(curToken==11) {
+    cout<<"  write ";
+    t.skipToken();
+    curToken=t.getToken();
+    //if(curToken==11) {cout<<"  write "; t.skipToken();curToken=t.getToken(); }
+    //else if(curToken==12) {cout<<" ;"; }
+    out.printOUT();
+  }
+}
+
+void Stmt::execStmt()
+{
+  if(altNum==1) {
+    assign.execAssign();
+  }
+  if(altNum==2) {
+    this->getIfInstanceStmt()->execIF();
+  }
+  if(altNum==3) {
+    this->getLoopInstanceStmt()->execLoop();
+  }
+  if(altNum==4) {
+    in.execIN();
+  }
+  if(altNum==5) {
+    out.execOUT();
+  }
+}
+
+IF* Stmt::getIfInstanceStmt()
+{
+  if(pif==NULL)
+    return new IF();
+  else
+    return pif;
+}
+
+Loop* Stmt::getLoopInstanceStmt()
+{
+  if(loop==NULL)
+    return new Loop();
+  else
+    return loop;
+}

@@ -1,0 +1,96 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "execDS.cpp"
+
+using namespace std;
+
+int Core()
+{
+  struct Program{
+    char* val;
+  };
+
+  struct Program ParseTree[100];
+
+  int count=0;
+  string lines[1000],line;
+  char *cstr, *pt;
+  char num[100];
+
+  ifstream istr("output3.txt");
+  if(!istr.is_open())
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+
+  while(getline(istr,line))
+  {
+    lines[count++]=line;
+  }
+  istr.close();
+
+
+  cstr=new char[1000];
+  int j=0;
+  for(int i=0;i<count;i++)
+  {
+    strcpy(cstr,lines[i].c_str());
+    pt=strtok(cstr," ");
+    while(pt!=NULL)
+    {
+      ParseTree[j].val=pt;
+      cout<<ParseTree[j].val<<endl;
+      j++;
+      pt=strtok(NULL," ");
+    }
+  }
+
+  for(int j=0;j<100;j++)
+  {
+    if(!strcmp(ParseTree[j].val,"1"))
+    {
+      execDS(ParseTree[j].val);
+      if(strcmp(ParseTree[j].val,"12"))
+      {
+	cout<<"Going back"<<endl;
+      }
+    }
+    else
+    {
+        cout<<"Invalid input. Exiting..."<<endl;
+        exit(1);
+    }
+  }
+
+/*
+  cstr=new char[1000];
+  for(int i=0;i<count;i++)
+  {
+    strcpy(cstr,lines[i].c_str());
+    pt=strtok(cstr," ");
+    while(pt!=NULL)
+    {
+      //cout<<pt<<endl;
+      //if( (!strcmp(pt,"1")) || (!strcmp(pt,"2")) || (!strcmp(pt,"3")) ) 
+      if(!strcmp(pt,"1")) 
+      {
+	//*(pt+10);
+	  execDS(pt);
+	if(strcmp(pt,"12"))
+	{
+	  cout<<"Going back"<<endl;
+	}
+	//cout<<pt<<endl;
+	//cout<<"Give me a sign"<<endl;
+      }
+      else 
+      {
+	cout<<"Invalid input. Exiting..."<<endl;
+	exit(1);
+      }
+      pt=strtok(NULL," ");
+    }
+  }*/
+}

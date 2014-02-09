@@ -1,0 +1,10 @@
+#include <iostream>
+#include "execIDList.cpp"
+
+using namespace std;
+
+void execDECL()
+{
+  cout<<"execDECL"<<endl;
+  execIDList();
+}

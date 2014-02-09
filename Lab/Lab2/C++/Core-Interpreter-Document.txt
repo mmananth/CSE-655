@@ -1,0 +1,38 @@
+/*------------------------------------------------------*/
+/* Description of the design of the project		*/
+/*------------------------------------------------------*/
+1. The Interpreter is split into 4 distinct portions:
+   a. Tokenizer
+   b. Parser
+   c. Printer
+   d. Executor
+2. The Interpreter takes 2 input parameters in the form of a text file. The first file contains the actual core program that has to be processed. The second file contains the values that will be used by the Interpreter during the course of execution of the core program.
+
+3. a. Tokenizer --
+	The Tokenizer reads the values seperated by a whitespace from the input file, which is stored in an array. These values are then displayed onto the standard output screen. The tokenized values are used by the subsequent sections of the Interpreter (Parser, Printer and Executor) for keeping a track while processing the file.
+	The 2 main functions provided by the Tokenizer class are: getToken() and skipToken(). Making a call to getToken() returns the current token (integer) value. Making a call to skipToken() increments the index value of the array that contains the tokens. This helps in skipping the Non-Terminal symbols while processing the Core program.
+
+   b. Parser --
+	The parser portion of the Interpreter is used to check for Compile-time errors. Some of the compile-time error checking features are:
+i. A variable already declared should not be used again
+
+   c. Printer --
+	Given an unformatted Core program as input, the printer adds indentation to them and pretty prints the same. The idea is to improve the readability of the program.
+  
+   d. Executor --	
+	The executor performs 2 major operations. One is to check for run-time errors and the other is to perform mathematical operations (addition, subtraction, multiplication) and to assign values to variables. It throws an error and exits the process when it encounters variables that were not declared in the declaration section of the program. When there are no issues with the program, it displays output onto the screen using the values present in the second command line input file.
+
+4. In order for the different classes to use the Tokenizer class functions, the Tokenizer object is made global.
+
+5. In order to provide data abstraction, each of the Non-Terminals have a seperate class. Each class has its member functions and variables declared in a header file.
+
+
+/*------------------------------------------------------*/
+/* Testing Methodology					*/
+/*------------------------------------------------------*/
+1. I tested by using the 3 sample files available in carmen and tweaking the same to test the various portions of my program. Unfortunately, I was not able to thoroughly test the executor and the pretty print needs some more work. 
+
+/*------------------------------------------------------*/
+/* Known bugs						*/
+/*------------------------------------------------------*/
+1. Since my Tokenizer class for Lab1 was not properly implemented, I found it difficult to work on lab2. I re-designed the Tokenizer as per the material presented in the class and then proceeded onto Lab2. I have disabled the executor portion of the Interpreter as I was not able to fully test it.

@@ -1,0 +1,358 @@
+#include<fstream>
+#include<iostream>
+#include<string>
+#include<map>
+#include<locale>
+#include "Core.cpp"
+
+using namespace std;
+
+class Tokenizer
+{
+private:
+  locale loc;
+  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;
+  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;
+
+  size_t found;
+  int k,n,count,count1,m;
+  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable;
+
+  ifstream istr, istr2, istr3;
+  ofstream ostr, ostr2;
+
+public:
+  /*void intVal();
+  void idName();
+  void processFile();*/
+  int getToken();
+  void skipToken();
+
+/***********************************************************
+*Declare the file handler objects
+***********************************************************/
+Tokenizer(char* arg1)
+{
+  k=n=count=count1=m=0;
+  flag_Plus=flag_Equal=flag_LeftParentheses=flag_Semicolon=flag_Num=flag_Upper=flag_Alnum=flag_RightParentheses=flag_Comma=flag_Variable=0;
+
+  istr.open(arg1,ifstream::in);
+  if(!istr.is_open()) 
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  ostr.open("output1.txt");
+  if(!ostr.is_open()) 
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  istr2.open("output1.txt", ifstream::in);
+  if(!istr2.is_open()) 
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  ostr2.open("output2.txt");
+  if(!ostr2.is_open()) 
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  istr3.open("output2.txt", ifstream::in);
+  if(!istr3.is_open()) 
+  {
+    cout<<"Unable to open file"<<endl;
+    exit(1);
+  }
+  skipToken();
+}//end of Tokenizer constructor
+};
+/******************************************************************
+*Go through the file and get the values into an array.
+******************************************************************/
+void Tokenizer::skipToken()
+{
+  while(getline(istr,line))
+  {
+    lines[count++]=line;
+  }
+
+  //closing the object for the input file
+  istr.close();
+
+/************************************************************************************
+*Use the string tokenizer function to get the tokens with space and tab as delimiters
+************************************************************************************/
+  cstr=new char[1000];
+  for(int i=0;i<count;i++)
+  {
+    strcpy(cstr,lines[i].c_str());
+    pt=strtok(cstr," \t");
+    while(pt!=NULL)
+    {
+      ostr<<pt<<endl;
+      pt=strtok(NULL," \t");
+    }
+  }
+
+  count = 0;
+  while(getline(istr2,line)) lines[count++]=line;
+
+/************************************************************************************
+*Manipulation of certain special symbols so that tokenizing becomes easier
+************************************************************************************/
+  for(int i=0;i<count;i++)
+  {
+      for(int j=0;j<lines[i].size();j++)
+      {
+	if(lines[i][j]=='+') 
+	{
+	  flag_Plus=1;
+	  substring1=lines[i].substr(j+1,lines[i].size());
+	  lines[i].replace(lines[i].find("+"), lines[i].length(), " @ ");
+	}
+      }
+      if(flag_Plus==1)
+      {
+        for(int j=0;j<lines[i].size();j++)
+        {
+	  if(lines[i][j]=='@') lines[i].replace(lines[i].find("@"), lines[i].length(), "+");
+        }
+        lines[i].append(" ");
+        lines[i].append(substring1);
+      }
+      //------------------------------
+      for(int j=0;j<lines[i].size();j++)
+      {
+        if( (lines[i][j] == '=') && (lines[i][j+1] == '=') && (lines[i][j+2] == '=') )
+        {
+	  substring1=lines[i].substr(j+1,lines[i].size());
+	  lines[i].replace(lines[i].find("="), lines[i].length(), " =");
+	  lines[i].append(" ");
+          lines[i].append(substring1);
+        }
+        else if( (lines[i][j] == '=') && (lines[i][j-1] == '=') )
+        {
+          if( (((int)lines[i][j+1] >= 48) && ((int)lines[i][j+1] <= 57)) || (((int)lines[i][j+1] >= 65) && ((int)lines[i][j+1] <= 90)) )
+          {
+	    substring1=lines[i].substr(j+1,lines[i].size());
+	    lines[i].replace(lines[i].find("=="), lines[i].length(), " ==");
+	    lines[i].append(" ");
+            lines[i].append(substring1);
+	  }
+	}
+	if( (lines[i][j] == '=') && (lines[i][j-1] == '=') )
+	{
+	  flag_Equal=0;
+	}
+	else if( (lines[i][j] == '=') && (lines[i][j-1] == '!') )
+	{
+	  flag_Equal=0;
+	}
+	else if( (lines[i][j] == '=') && (lines[i][j-1] == '<') )
+	{
+	  flag_Equal=0;
+	}
+	else if( (lines[i][j] == '=') && (lines[i][j-1] == '>') )
+	{
+	  flag_Equal=0;
+	}
+	else if(lines[i][j] == '=')
+	{
+          if( (((int)lines[i][j+1] >= 48) && ((int)lines[i][j+1] <= 57)) || (((int)lines[i][j+1] >= 65) && ((int)lines[i][j+1] <= 90)) )
+          {
+	    substring1=lines[i].substr(j+1,lines[i].size());
+	    lines[i].replace(lines[i].find("="), lines[i].length(), " =");
+	    lines[i].append(" ");
+            lines[i].append(substring1);
+	  }
+	}
+      }
+
+      //------------------------------
+      for(int j=0;j<lines[i].size();j++)
+      {
+	if(lines[i][j]=='(') 
+	{
+	  flag_LeftParentheses=1;
+	  substring1=lines[i].substr(j+1,lines[i].size());
+	  lines[i].replace(lines[i].find("("), lines[i].length(), " @ ");
+	}
+      }
+      if(flag_LeftParentheses==1)
+      {
+        for(int j=0;j<lines[i].size();j++)
+        {
+	  if(lines[i][j]=='@') lines[i].replace(lines[i].find("@"), lines[i].length(), "(");
+        }
+        lines[i].append(" ");
+        lines[i].append(substring1);
+      }
+      //------------------------------
+      for(int j=0;j<lines[i].size();j++)
+      {
+	if(lines[i][j]==';') 
+	{
+	  flag_Semicolon=1;
+	  substring1=lines[i].substr(j+1,lines[i].size());
+	  lines[i].replace(lines[i].find(";"), lines[i].length(), " @ ");
+	}
+      }
+      if(flag_Semicolon==1)
+      {
+        for(int j=0;j<lines[i].size();j++)
+        {
+	  if(lines[i][j]=='@') lines[i].replace(lines[i].find("@"), lines[i].length(), ";");
+        }
+        lines[i].append(" ");
+        lines[i].append(substring1);
+      }
+      //------------------------------
+      for(int j=0;j<lines[i].size();j++)
+      {
+	if(lines[i][j]==')') 
+	{
+	  flag_RightParentheses=1;
+	  substring1=lines[i].substr(j+1,lines[i].size());
+	  lines[i].replace(lines[i].find(")"), lines[i].length(), " @ ");
+	}
+      }
+      if(flag_RightParentheses==1)
+      {
+        for(int j=0;j<lines[i].size();j++)
+        {
+	  if(lines[i][j]=='@') lines[i].replace(lines[i].find("@"), lines[i].length(), ")");
+        }
+        lines[i].append(" ");
+        lines[i].append(substring1);
+      }
+      //------------------------------
+      for(int j=0;j<lines[i].size();j++)
+      {
+	if(lines[i][j]==',') 
+	{
+	  flag_Comma=1;
+	  substring1=lines[i].substr(j+1,lines[i].size());
+	  lines[i].replace(lines[i].find(","), lines[i].length(), " @ ");
+	}
+      }
+      if(flag_Comma==1)
+      {
+        for(int j=0;j<lines[i].size();j++)
+        {
+	  if(lines[i][j]=='@') lines[i].replace(lines[i].find("@"), lines[i].length(), ",");
+        }
+        lines[i].append(" ");
+        lines[i].append(substring1);
+      }
+      //------------------------------
+      flag_Plus=flag_Equal=flag_LeftParentheses=flag_Semicolon=flag_RightParentheses=flag_Comma=0;
+  }
+
+/************************************************************************************
+*Further manipulation
+************************************************************************************/
+      cstra=new char[1000];
+      for(int j=0;j<count;j++)
+      {
+ 	strcpy(cstra,lines[j].c_str());
+	pta=strtok(cstra," \t");
+	while(pta!=NULL)
+	{
+	  ostr2<<pta<<endl;;
+	  pta=strtok(NULL," \t");
+	}
+      }
+
+  count = 0;
+  while(getline(istr3,line)) lines[count++]=line;
+}//end of skipToken method
+
+int Tokenizer::getToken()
+{
+/************************************************************************************
+*This is the section that does the tokenizing of the values in the input file
+************************************************************************************/
+  for(int i=0;i<count;i++)
+    {
+      flag_Num=flag_Upper=flag_Alnum=flag_Variable=0;
+
+      for(int mm=0;mm<lines[i].length();mm++)
+      {
+        //if( ((isupper(lines[i][mm],loc)) && (isdigit(lines[i][mm+1]))) || ((isdigit(lines[i][mm],loc)) && (isupper(lines[i][mm+1]))) ) 
+        if( (isdigit(lines[i][mm],loc)) && (isupper(lines[i][mm+1])) ) 
+        {
+	  cout<<"Error in input"<<endl;
+	}
+      }
+
+      if(lines[i] == "program") return 1;
+      if(lines[i] == "begin") return 2;
+      if(lines[i] == "end") return 3;
+      if(lines[i] == "int") return 4;
+      if(lines[i] == "if") return 5;
+      if(lines[i] == "then") return 6;
+      if(lines[i] == "else") return 7;
+      if(lines[i] == "while") return 8;
+      if(lines[i] == "loop") return 9;
+      if(lines[i] == "read") return 10;
+      if(lines[i] == "write") return 11;
+      if(lines[i] == ";") return 12;
+      if(lines[i] == ",") return 13;
+      if(lines[i] == "=") return 14;
+      if(lines[i] == "!") return 15;
+      if(lines[i] == "[") return 16;
+      if(lines[i] == "]") return 17;
+      if(lines[i] == "&&") return 18;
+      if(lines[i] == "||") return 19;
+      if(lines[i] == "(") return 20;
+      if(lines[i] == ")") return 21;
+      if(lines[i] == "+") return 22;
+      if(lines[i] == "-") return 23;
+      if(lines[i] == "*") return 24;
+      if(lines[i] == "!=") return 25;
+      if(lines[i] == "==") return 26;
+      if(lines[i] == "<") return 27;
+      if(lines[i] == ">") return 28;
+      if(lines[i] == "<=") return 29;
+      if(lines[i] == ">=") return 30;
+
+      for(int mm=0;mm<lines[i].length();mm++)
+      {
+	if( (isupper(lines[i][mm-1],loc)) && (isdigit(lines[i][mm],loc)) )
+        {
+	  flag_Num=0;
+	}
+        else if(isdigit(lines[i][mm],loc)) 
+        {
+	  flag_Num=1;
+        }
+      }
+      if(flag_Num==1) return 31;
+	
+      for(int mm=0;mm<lines[i].length();mm++)
+      {
+        if( ((isupper(lines[i][mm-1],loc)) && (isdigit(lines[i][mm],loc))) || (isupper(lines[i][mm],loc)) )
+        {
+	  flag_Upper=1;
+        }
+	else 
+	{
+	  flag_Upper=0;
+	}
+      }
+      if(flag_Upper==1) return 32;
+
+  }//i's for loop ends here
+
+  return 33;
+
+  //closing the object for the input and the output files
+  istr2.close();
+  istr3.close();
+  ostr.close();
+  ostr2.close();
+  //Core();
+}//main's loop ends here

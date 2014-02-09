@@ -1,0 +1,314 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Assign	Assign.h	/^  Assign(){};$/;"	f	class:Assign
+Assign	Assign.h	/^class Assign:public Tokenizer$/;"	c
+CC	Makefile	/^CC=g++$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-c -g $/;"	m
+CONFLICTRES_H	ConflictRes.h	2;"	d
+Compare	Compare.h	/^  Compare(){};$/;"	f	class:Compare
+Compare	Compare.h	/^class Compare:public Tokenizer$/;"	c
+CompareOperator	CompareOperator.h	/^  CompareOperator(){};$/;"	f	class:CompareOperator
+CompareOperator	CompareOperator.h	/^class CompareOperator:public Tokenizer$/;"	c
+Comparison	Comparison.h	/^  Comparison() {};$/;"	f	class:Comparison
+Comparison	Comparison.h	/^class Comparison:public Tokenizer$/;"	c
+Condition	Condition.h	/^  Condition(){};$/;"	f	class:Condition
+Condition	Condition.h	/^class Condition:public Tokenizer$/;"	c
+Decl	Decl.h	/^  Decl(){};$/;"	f	class:Decl
+Decl	Decl.h	/^class Decl:public Tokenizer$/;"	c
+DeclSeq	DeclSeq.h	/^  DeclSeq(){};$/;"	f	class:DeclSeq
+DeclSeq	DeclSeq.h	/^class DeclSeq:public Tokenizer$/;"	c
+Digit	Digit.h	/^  Digit(){};$/;"	f	class:Digit
+Digit	Digit.h	/^class Digit:public Tokenizer$/;"	c
+EXECUTABLE	Makefile	/^EXECUTABLE=TestInterpreter$/;"	m
+Expression	Expression.h	/^  Expression(){ trm=NULL; };$/;"	f	class:Expression
+Expression	Expression.h	/^class Expression:public Tokenizer$/;"	c
+ID	ID.h	/^  ID(){};$/;"	f	class:ID
+ID	ID.h	/^  ID(string n) {$/;"	f	class:ID
+ID	ID.h	/^class ID:public Tokenizer$/;"	c
+IF	IF.h	/^  IF(){ ss=NULL; cond=NULL; };$/;"	f	class:IF
+IF	IF.h	/^class IF:public Tokenizer$/;"	c
+IN	IN.h	/^  IN(){ idl=NULL; };$/;"	f	class:IN
+IN	IN.h	/^class IN:public Tokenizer$/;"	c
+LDFLAGS	Makefile	/^LDFLAGS=$/;"	m
+Letter	Letter.h	/^  Letter() {};$/;"	f	class:Letter
+Letter	Letter.h	/^class Letter:public Tokenizer$/;"	c
+Loop	Loop.h	/^  Loop(){ ss=NULL; cond=NULL; };$/;"	f	class:Loop
+Loop	Loop.h	/^class Loop:public Tokenizer$/;"	c
+MyMessageBox	TestMMA.cpp	/^class MyMessageBox$/;"	c	file:
+Number	Number.h	/^  Number() {};$/;"	f	class:Number
+Number	Number.h	/^class Number:public Tokenizer$/;"	c
+OBJECTS	Makefile	/^OBJECTS=$(SOURCES:.cpp=.o)$/;"	m
+OUT	OUT.h	/^  OUT(){ idl=NULL; };$/;"	f	class:OUT
+OUT	OUT.h	/^class OUT:public Tokenizer$/;"	c
+Operator	Operator.h	/^  Operator(){ no=""; exp=NULL; };$/;"	f	class:Operator
+Operator	Operator.h	/^class Operator:public Tokenizer$/;"	c
+Program	Program.h	/^  Program(){ indexFor2=0; } ;$/;"	f	class:Program
+Program	Program.h	/^class Program:public Tokenizer$/;"	c
+SOURCES	Makefile	/^SOURCES=TestInterpreter.cpp \\$/;"	m
+Stmt	Stmt.h	/^  Stmt(){ pif=NULL; loop=NULL; };$/;"	f	class:Stmt
+Stmt	Stmt.h	/^class Stmt:public Tokenizer$/;"	c
+StmtSeq	StmtSeq.h	/^  StmtSeq(){ stmt=NULL; };$/;"	f	class:StmtSeq
+StmtSeq	StmtSeq.h	/^class StmtSeq:public Tokenizer$/;"	c
+Tokenizer	Tokenizer.cpp	/^Tokenizer::Tokenizer()$/;"	f	class:Tokenizer
+Tokenizer	Tokenizer.h	/^class Tokenizer$/;"	c
+Trm	Trm.h	/^  Trm(){ oper=NULL; };$/;"	f	class:Trm
+Trm	Trm.h	/^class Trm:public Tokenizer$/;"	c
+User	TestMMA.cpp	/^class User$/;"	c	file:
+_ASSIGN_H_	Assign.h	2;"	d
+_COMPAREOPERATOR_H_	CompareOperator.h	2;"	d
+_COMPARE_H_	Compare.h	2;"	d
+_COMPARISON_H_	Comparison.h	2;"	d
+_CONDITION_H_	Condition.h	2;"	d
+_COREHEADER_H_	Program.h	2;"	d
+_DECLARATIONSEQUENCE_H	DeclSeq.h	2;"	d
+_DECLARATION_H_	Decl.h	2;"	d
+_DIGIT_H_	Digit.h	2;"	d
+_EXPRESSION_H_	Expression.h	2;"	d
+_IDLIST_H_	idList.h	2;"	d
+_ID_H_	ID.h	2;"	d
+_IF_H_	IF.h	2;"	d
+_IN_H_	IN.h	2;"	d
+_LETTER_H_	Letter.h	2;"	d
+_LOOP_H_	Loop.h	2;"	d
+_NUMBER_H_	Number.h	2;"	d
+_OPERATOR_H_	Operator.h	2;"	d
+_OUT_H_	OUT.h	2;"	d
+_STATEMENTSEQ_H	StmtSeq.h	2;"	d
+_STATEMENT_H_	Stmt.h	2;"	d
+_TOKENIZER_H	Tokenizer.h	2;"	d
+_TRM_H_	Trm.h	2;"	d
+altNum	CompareOperator.h	/^  int altNum;$/;"	m	class:CompareOperator
+altNum	Condition.h	/^  int altNum;$/;"	m	class:Condition
+altNum	Expression.h	/^  int altNum;$/;"	m	class:Expression
+altNum	Operator.h	/^  int curToken,altNum;$/;"	m	class:Operator
+altNum	Stmt.h	/^  int altNum;$/;"	m	class:Stmt
+assign	Stmt.h	/^  Assign assign;$/;"	m	class:Stmt
+c	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+ch	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+cha	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+checkCond	Loop.h	/^  bool checkCond;$/;"	m	class:Loop
+chra	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+comp	Condition.h	/^  Compare comp;$/;"	m	class:Condition
+compOp	Compare.h	/^  CompareOperator compOp;$/;"	m	class:Compare
+cond	IF.h	/^  Condition *cond;$/;"	m	class:IF
+cond	Loop.h	/^  Condition *cond;$/;"	m	class:Loop
+cond	Stmt.h	/^  Condition cond;$/;"	m	class:Stmt
+count	Tokenizer.h	/^  int k,n,m,count;$/;"	m	class:Tokenizer
+countFile2	Program.h	/^  int curToken,countFile2,indexFor2;$/;"	m	class:Program
+cstr	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+cstr1	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+cstr2	Program.h	/^  char* cstr2, *pt2;$/;"	m	class:Program
+cstra	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+curToken	Assign.h	/^  int curToken,resultAssign;$/;"	m	class:Assign
+curToken	Compare.h	/^  int curToken;$/;"	m	class:Compare
+curToken	CompareOperator.h	/^  int curToken;$/;"	m	class:CompareOperator
+curToken	Condition.h	/^  int curToken;$/;"	m	class:Condition
+curToken	Decl.h	/^  int curToken;$/;"	m	class:Decl
+curToken	DeclSeq.h	/^  int curToken;$/;"	m	class:DeclSeq
+curToken	Digit.h	/^  int curToken;$/;"	m	class:Digit
+curToken	Expression.h	/^  int curToken;$/;"	m	class:Expression
+curToken	ID.h	/^  int curToken;$/;"	m	class:ID
+curToken	IF.h	/^  int curToken;$/;"	m	class:IF
+curToken	IN.h	/^  int curToken;$/;"	m	class:IN
+curToken	Letter.h	/^  int curToken;$/;"	m	class:Letter
+curToken	Loop.h	/^  int curToken;$/;"	m	class:Loop
+curToken	Number.h	/^  int curToken;$/;"	m	class:Number
+curToken	OUT.h	/^  int curToken;$/;"	m	class:OUT
+curToken	Operator.h	/^  int curToken,altNum;$/;"	m	class:Operator
+curToken	Program.h	/^  int curToken,countFile2,indexFor2;$/;"	m	class:Program
+curToken	Stmt.h	/^  int curToken;$/;"	m	class:Stmt
+curToken	StmtSeq.h	/^  int curToken;$/;"	m	class:StmtSeq
+curToken	Trm.h	/^  int curToken, resultTrm;$/;"	m	class:Trm
+curToken	idList.h	/^  int curToken;$/;"	m	class:idList
+dataMessageList	TestMMA.cpp	/^ vector<Message> *dataMessageList;$/;"	m	class:MyMessageBox	file:
+dataMsgBox	TestMMA.cpp	/^ MyMessageBox dataMsgBox;$/;"	m	class:User	file:
+decl	DeclSeq.h	/^  Decl decl;$/;"	m	class:DeclSeq
+declared	ID.h	/^  bool declared;$/;"	m	class:ID
+digit	Number.h	/^  Digit digit;$/;"	m	class:Number
+ds	Program.h	/^  DeclSeq ds;$/;"	m	class:Program
+eIDs	ID.cpp	/^static ID* eIDs[20];$/;"	v	file:
+execAssign	Assign.cpp	/^void Assign::execAssign()$/;"	f	class:Assign
+execCompare	Compare.cpp	/^void Compare::execCompare()$/;"	f	class:Compare
+execCompareOperator	CompareOperator.cpp	/^void CompareOperator::execCompareOperator()$/;"	f	class:CompareOperator
+execCondition	Condition.cpp	/^bool Condition::execCondition()$/;"	f	class:Condition
+execDS	DeclSeq.cpp	/^void DeclSeq::execDS()$/;"	f	class:DeclSeq
+execDecl	Decl.cpp	/^void Decl::execDecl()$/;"	f	class:Decl
+execDigit	Digit.cpp	/^void Digit::execDigit()$/;"	f	class:Digit
+execExpression	Expression.cpp	/^int Expression::execExpression()$/;"	f	class:Expression
+execIF	IF.cpp	/^void IF::execIF()$/;"	f	class:IF
+execIN	IN.cpp	/^void IN::execIN()$/;"	f	class:IN
+execLetter	Letter.cpp	/^void Letter::execLetter()$/;"	f	class:Letter
+execLoop	Loop.cpp	/^void Loop::execLoop()$/;"	f	class:Loop
+execNumber	Number.cpp	/^void Number::execNumber()$/;"	f	class:Number
+execOUT	OUT.cpp	/^void OUT::execOUT()$/;"	f	class:OUT
+execOperator	Operator.cpp	/^int Operator::execOperator()$/;"	f	class:Operator
+execProgram	Program.cpp	/^void Program::execProgram() {$/;"	f	class:Program
+execSS	StmtSeq.cpp	/^void StmtSeq::execSS()$/;"	f	class:StmtSeq
+execStmt	Stmt.cpp	/^void Stmt::execStmt()$/;"	f	class:Stmt
+execTrm	Trm.cpp	/^int Trm::execTrm()$/;"	f	class:Trm
+exp	Assign.h	/^  Expression exp;$/;"	m	class:Assign
+exp	Operator.h	/^  Expression *exp;$/;"	m	class:Operator
+flag_Alnum	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Comma	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Equal	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_LeftParentheses	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_LeftSquare	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Num	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Plus	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_RightParentheses	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_RightSquare	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Semicolon	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Upper	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+flag_Variable	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+found	Tokenizer.h	/^  size_t found;$/;"	m	class:Tokenizer
+getCondInstance	IF.cpp	/^Condition* IF::getCondInstance()$/;"	f	class:IF
+getCondInstanceLoop	Loop.cpp	/^Condition* Loop::getCondInstanceLoop()$/;"	f	class:Loop
+getExpInstanceOp	Operator.cpp	/^Expression* Operator::getExpInstanceOp()$/;"	f	class:Operator
+getIDName	ID.cpp	/^string ID::getIDName()$/;"	f	class:ID
+getIDVal	ID.cpp	/^int ID::getIDVal()$/;"	f	class:ID
+getIDValString	ID.cpp	/^string ID::getIDValString()$/;"	f	class:ID
+getIdName	Tokenizer.cpp	/^string Tokenizer::getIdName()$/;"	f	class:Tokenizer
+getIfInstanceStmt	Stmt.cpp	/^IF* Stmt::getIfInstanceStmt()$/;"	f	class:Stmt
+getInput	Tokenizer.cpp	/^void Tokenizer::getInput(char* arg1)$/;"	f	class:Tokenizer
+getLoopInstanceStmt	Stmt.cpp	/^Loop* Stmt::getLoopInstanceStmt()$/;"	f	class:Stmt
+getNextInputVal	Program.cpp	/^string Program::getNextInputVal()$/;"	f	class:Program
+getOperInstanceTrm	Trm.cpp	/^Operator* Trm::getOperInstanceTrm()$/;"	f	class:Trm
+getSSInstance	IF.cpp	/^StmtSeq* IF::getSSInstance()$/;"	f	class:IF
+getSSInstanceLoop	Loop.cpp	/^StmtSeq* Loop::getSSInstanceLoop()$/;"	f	class:Loop
+getStmtInstanceSS	StmtSeq.cpp	/^Stmt* StmtSeq::getStmtInstanceSS()$/;"	f	class:StmtSeq
+getToken	Tokenizer.cpp	/^int Tokenizer::getToken()$/;"	f	class:Tokenizer
+getTrmInstance	Expression.cpp	/^Trm* Expression::getTrmInstance()$/;"	f	class:Expression
+getidListInstance	OUT.cpp	/^idList* OUT::getidListInstance()$/;"	f	class:OUT
+getidListInstanceIN	IN.cpp	/^idList* IN::getidListInstanceIN()$/;"	f	class:IN
+gnext	idList.h	/^  string strID,gnext;$/;"	m	class:idList
+good	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+id	Assign.h	/^  ID id;$/;"	m	class:Assign
+id	Operator.h	/^  ID id;$/;"	m	class:Operator
+id	Program.h	/^  ID id;$/;"	m	class:Program
+id	idList.h	/^  ID id;$/;"	m	class:idList
+idCount	ID.cpp	/^static int idCount = 0;$/;"	v	file:
+idList	idList.h	/^  idList(){ gnext=""; };$/;"	f	class:idList
+idList	idList.h	/^class idList:public Tokenizer$/;"	c
+idValue	idList.h	/^  string idValue;$/;"	m	class:idList
+idl	Decl.h	/^  idList idl; $/;"	m	class:Decl
+idl	DeclSeq.h	/^  idList idl;$/;"	m	class:DeclSeq
+idl	IN.h	/^  idList *idl;$/;"	m	class:IN
+idl	OUT.h	/^  idList *idl;$/;"	m	class:OUT
+ifstr	Program.h	/^  ifstream ifstr;$/;"	m	class:Program
+in	Stmt.h	/^  IN in;$/;"	m	class:Stmt
+index	Tokenizer.h	/^  int flag_Plus, flag_Equal, flag_LeftParentheses, flag_Semicolon, flag_Num, flag_Upper, flag_Alnum, flag_RightParentheses, flag_Comma, flag_Variable, flag_LeftSquare, flag_RightSquare, good, index;$/;"	m	class:Tokenizer
+indexFor2	Program.h	/^  int curToken,countFile2,indexFor2;$/;"	m	class:Program
+initialized	ID.h	/^  bool initialized;$/;"	m	class:ID
+insertSpace	ID.cpp	/^void ID::insertSpace()$/;"	f	class:ID
+intVal	Tokenizer.cpp	/^string Tokenizer::intVal()$/;"	f	class:Tokenizer
+istr	Tokenizer.h	/^  ifstream istr, istr2, istr3;$/;"	m	class:Tokenizer
+istr2	Tokenizer.h	/^  ifstream istr, istr2, istr3;$/;"	m	class:Tokenizer
+istr3	Tokenizer.h	/^  ifstream istr, istr2, istr3;$/;"	m	class:Tokenizer
+k	Tokenizer.h	/^  int k,n,m,count;$/;"	m	class:Tokenizer
+line	Tokenizer.h	/^  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;$/;"	m	class:Tokenizer
+line1	Tokenizer.h	/^  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;$/;"	m	class:Tokenizer
+lineCnt	Tokenizer.h	/^  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;$/;"	m	class:Tokenizer
+lineFile2	Program.h	/^  string linesFile2[100],lineFile2;$/;"	m	class:Program
+lines	Tokenizer.h	/^  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;$/;"	m	class:Tokenizer
+lines1	Tokenizer.h	/^  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;$/;"	m	class:Tokenizer
+linesFile2	Program.h	/^  string linesFile2[100],lineFile2;$/;"	m	class:Program
+loc	Tokenizer.h	/^  locale loc;$/;"	m	class:Tokenizer
+loop	Stmt.h	/^  Loop *loop;$/;"	m	class:Stmt
+m	Tokenizer.h	/^  int k,n,m,count;$/;"	m	class:Tokenizer
+main	TestInterpreter.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	test.cpp	/^int main ()$/;"	f
+n	Tokenizer.h	/^  int k,n,m,count;$/;"	m	class:Tokenizer
+name	ID.h	/^  string name,strVal;$/;"	m	class:ID
+no	Operator.h	/^  string no;$/;"	m	class:Operator
+op	Compare.h	/^  Operator op;$/;"	m	class:Compare
+oper	Trm.h	/^  Operator *oper;$/;"	m	class:Trm
+ostr	Tokenizer.h	/^  ofstream ostr, ostr2;$/;"	m	class:Tokenizer
+ostr2	Tokenizer.h	/^  ofstream ostr, ostr2;$/;"	m	class:Tokenizer
+out	Stmt.h	/^  OUT out;$/;"	m	class:Stmt
+parseAssign	Assign.cpp	/^void Assign::parseAssign()$/;"	f	class:Assign
+parseCompare	Compare.cpp	/^void Compare::parseCompare()$/;"	f	class:Compare
+parseCompareOperator	CompareOperator.cpp	/^void CompareOperator::parseCompareOperator()$/;"	f	class:CompareOperator
+parseComparison	Comparison.cpp	/^void Comparison::parseComparison()$/;"	f	class:Comparison
+parseCondition	Condition.cpp	/^void Condition::parseCondition()$/;"	f	class:Condition
+parseDS	DeclSeq.cpp	/^void DeclSeq::parseDS()$/;"	f	class:DeclSeq
+parseDecl	Decl.cpp	/^void Decl::parseDecl()$/;"	f	class:Decl
+parseDigit	Digit.cpp	/^void Digit::parseDigit()$/;"	f	class:Digit
+parseExpression	Expression.cpp	/^void Expression::parseExpression()$/;"	f	class:Expression
+parseIDForDS	ID.cpp	/^ID* ID::parseIDForDS()$/;"	f	class:ID
+parseIDForSS	ID.cpp	/^ID* ID::parseIDForSS()$/;"	f	class:ID
+parseIDListForDS	idList.cpp	/^void idList::parseIDListForDS()$/;"	f	class:idList
+parseIDListForSS	idList.cpp	/^void idList::parseIDListForSS()$/;"	f	class:idList
+parseIF	IF.cpp	/^void IF::parseIF()$/;"	f	class:IF
+parseIN	IN.cpp	/^void IN::parseIN()$/;"	f	class:IN
+parseInputFile2	Program.cpp	/^void Program::parseInputFile2(char* arg2) {$/;"	f	class:Program
+parseLetter	Letter.cpp	/^void Letter::parseLetter()$/;"	f	class:Letter
+parseLoop	Loop.cpp	/^void Loop::parseLoop()$/;"	f	class:Loop
+parseNumber	Number.cpp	/^void Number::parseNumber()$/;"	f	class:Number
+parseOUT	OUT.cpp	/^void OUT::parseOUT()$/;"	f	class:OUT
+parseOperator	Operator.cpp	/^void Operator::parseOperator()$/;"	f	class:Operator
+parseProgram	Program.cpp	/^void Program::parseProgram() {$/;"	f	class:Program
+parseSS	StmtSeq.cpp	/^void StmtSeq::parseSS()$/;"	f	class:StmtSeq
+parseStmt	Stmt.cpp	/^void Stmt::parseStmt()$/;"	f	class:Stmt
+parseToken	Tokenizer.cpp	/^void Tokenizer::parseToken()$/;"	f	class:Tokenizer
+parseTrm	Trm.cpp	/^void Trm::parseTrm()$/;"	f	class:Trm
+pif	Stmt.h	/^  IF *pif;$/;"	m	class:Stmt
+printAssign	Assign.cpp	/^void Assign::printAssign()$/;"	f	class:Assign
+printCompare	Compare.cpp	/^void Compare::printCompare()$/;"	f	class:Compare
+printCompareOperator	CompareOperator.cpp	/^void CompareOperator::printCompareOperator()$/;"	f	class:CompareOperator
+printCondition	Condition.cpp	/^void Condition::printCondition()$/;"	f	class:Condition
+printDS	DeclSeq.cpp	/^void DeclSeq::printDS()$/;"	f	class:DeclSeq
+printDecl	Decl.cpp	/^void Decl::printDecl()$/;"	f	class:Decl
+printDigit	Digit.cpp	/^void Digit::printDigit()$/;"	f	class:Digit
+printExpression	Expression.cpp	/^void Expression::printExpression()$/;"	f	class:Expression
+printID	ID.cpp	/^void ID::printID()$/;"	f	class:ID
+printIDList	idList.cpp	/^void idList::printIDList()$/;"	f	class:idList
+printIF	IF.cpp	/^void IF::printIF()$/;"	f	class:IF
+printIN	IN.cpp	/^void IN::printIN()$/;"	f	class:IN
+printLetter	Letter.cpp	/^void Letter::printLetter()$/;"	f	class:Letter
+printLines	Tokenizer.cpp	/^void Tokenizer::printLines()$/;"	f	class:Tokenizer
+printLoop	Loop.cpp	/^void Loop::printLoop()$/;"	f	class:Loop
+printNumber	Number.cpp	/^void Number::printNumber()$/;"	f	class:Number
+printOUT	OUT.cpp	/^void OUT::printOUT()$/;"	f	class:OUT
+printOperator	Operator.cpp	/^void Operator::printOperator()$/;"	f	class:Operator
+printProgram	Program.cpp	/^void Program::printProgram() {$/;"	f	class:Program
+printSS	StmtSeq.cpp	/^void StmtSeq::printSS()$/;"	f	class:StmtSeq
+printStmt	Stmt.cpp	/^void Stmt::printStmt()$/;"	f	class:Stmt
+printTrm	Trm.cpp	/^void Trm::printTrm()$/;"	f	class:Trm
+pt	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+pt1	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+pt2	Program.h	/^  char* cstr2, *pt2;$/;"	m	class:Program
+pta	Tokenizer.h	/^  char *ch, *chra, *cha, *cstr, *cstra, *pt, *pt1, *pta, c, *cstr1;$/;"	m	class:Tokenizer
+readInput	idList.cpp	/^void idList::readInput()$/;"	f	class:idList
+resultAssign	Assign.cpp	/^int resultAssign=0;$/;"	v
+resultAssign	Assign.h	/^  int curToken,resultAssign;$/;"	m	class:Assign
+resultTrm	Trm.h	/^  int curToken, resultTrm;$/;"	m	class:Trm
+setIDVal	ID.cpp	/^void ID::setIDVal(int value)$/;"	f	class:ID
+setIDValString	ID.cpp	/^void ID::setIDValString(string strValue)$/;"	f	class:ID
+setIndex	Tokenizer.cpp	/^void Tokenizer::setIndex(int value)$/;"	f	class:Tokenizer
+skipToken	Tokenizer.cpp	/^void Tokenizer::skipToken()$/;"	f	class:Tokenizer
+ss	IF.h	/^  StmtSeq *ss;$/;"	m	class:IF
+ss	Loop.h	/^  StmtSeq *ss;$/;"	m	class:Loop
+ss	Program.h	/^  StmtSeq ss;$/;"	m	class:Program
+stmt	StmtSeq.h	/^  Stmt *stmt;$/;"	m	class:StmtSeq
+strID	idList.h	/^  string strID,gnext;$/;"	m	class:idList
+strVal	ID.h	/^  string name,strVal;$/;"	m	class:ID
+substring1	Tokenizer.h	/^  string lines[1000],line,lines1[1000],line1,lineCnt,substring1;$/;"	m	class:Tokenizer
+t	Comparison.h	/^  Tokenizer t;$/;"	m	class:Comparison
+t	TestInterpreter.cpp	/^Tokenizer t;$/;"	v
+trm	Expression.h	/^  Trm *trm;$/;"	m	class:Expression
+val	ID.h	/^  int val;$/;"	m	class:ID
+valueIfBool	IF.h	/^  bool valueIfBool;$/;"	m	class:IF
+writeOutput	idList.cpp	/^void idList::writeOutput()$/;"	f	class:idList
+~Expression	Expression.cpp	/^Expression::~Expression()$/;"	f	class:Expression
+~IF	IF.cpp	/^IF::~IF()$/;"	f	class:IF
+~IN	IN.cpp	/^IN::~IN()$/;"	f	class:IN
+~Loop	Loop.cpp	/^Loop::~Loop()$/;"	f	class:Loop
+~OUT	OUT.cpp	/^OUT::~OUT()$/;"	f	class:OUT
+~Operator	Operator.cpp	/^Operator::~Operator()$/;"	f	class:Operator
+~Stmt	Stmt.cpp	/^Stmt::~Stmt()$/;"	f	class:Stmt
+~StmtSeq	StmtSeq.cpp	/^StmtSeq::~StmtSeq()$/;"	f	class:StmtSeq
+~Trm	Trm.cpp	/^Trm::~Trm()$/;"	f	class:Trm

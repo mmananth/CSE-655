@@ -1,0 +1,15 @@
+program
+int
+Y
+,
+X
+;
+begin
+X
+=
+25
+;
+write
+X
+;
+end
